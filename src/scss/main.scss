@@ -1,0 +1,483 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.container {
+  max-width: 1040px;
+  margin: auto;
+  padding: 20px 10px;
+  @include sm {
+    padding: 20px;
+  }
+}
+
+.grey {
+  color: $dustyGray;
+}
+
+.title_ps {
+  font-family: $firaSans;
+  text-align: right;
+  margin-bottom: 80px;
+}
+
+h1, h2 {
+  font-family: $roboto;
+  font-size: 26px;
+  color: $mineShaft;
+  @include sm {
+    font-size: 28px;
+  }
+  @include md {
+    font-size: 32px;
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+  @include sm {
+    margin-bottom: 30px;
+  }
+  @include md {
+    margin-bottom: 40px;
+  }
+}
+
+h2 {
+  margin-bottom: 10px;
+  + p {
+    font-size: 14px;
+    font-family: $roboto;
+    color: $mineShaft;
+    margin-bottom: 20px;
+    @include sm {
+      margin-bottom: 30px;
+    }
+    @include md {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.form_general-info {
+  @include sm {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.column {
+  width: 100%;
+  @include sm {
+    max-width: 49%;
+  }
+  @include md {
+    max-width: 394px;
+  }
+  @include md {
+    width: 49%;
+  }
+}
+input[type='submit'] {
+  border-radius: 10px;
+  background: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.3);
+  color: $white;
+  transition: $default-transition;
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: $roboto;
+  font-size: 18px;
+  border: none;
+  float: right;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 3px -3px $white;
+  outline: none;
+  cursor: pointer;
+  @include sm {
+    margin-top: 40px;
+  }
+  @include md {
+    margin-top: 50px;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(0.95);
+  }
+}
+
+input:not([type='submit']),
+select {
+  border: 1px solid $dustyGray;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: $roboto;
+}
+
+label {
+  color: $dustyGray;
+  font-size: 14px;
+  font-family: $roboto;
+  margin-bottom: 4px;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 15px;
+  @include sm {
+    margin-bottom: 25px;
+  }
+  label,
+  input{
+    display: block;
+  }
+  &.form-name,
+  &.form-surname,
+  &.form-city,
+  &.form-postalCode {
+    @include sm {
+      width: 48%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  &.form-email {
+    position: relative;
+    label {
+      &:after {
+        content: '';
+        width: 18px;
+        height: 15px;
+        background: red;
+        position: absolute;
+        right: 10px;
+        top: 33px;
+        background: url('../img/mail_logo.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  &.form-name,
+  &.form-city {
+    margin-right: 2%;
+  }
+  &.form-terms {
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    label {
+      margin-bottom: 0;
+    }
+    input {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.form_shipping-billing {
+  .wraper {
+    @include sm {
+      display: flex;
+    }
+  }
+  .tabs_headers {
+    flex-basis: 35%;
+    @include lg {
+      flex-basis: 20%;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .tab_title {
+      cursor: pointer;
+      position: relative;
+      color: $dustyGray;
+      transition: $default-transition;
+      &.active {
+        color: $mineShaft;
+      }
+      p {
+        padding-left: 30px;
+      }
+      p:first-child {
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      &#tabStandard {
+        p:first-child {
+          &:before {
+            width: 22px;
+            height: 15px;
+            background: url('../img/truck_logo.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        &.active {
+          p:first-child {
+            &:before {
+              background: url('../img/truck_logo_active.svg') no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+      &#tabExpress {
+        p:first-child {
+          &:before {
+            width: 22px;
+            height: 11px;
+            background: url('../img/plane_logo.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        &.active {
+          p:first-child {
+            &:before {
+              background: url('../img/plane_logo_active.svg') no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+      &#tabPremium {
+        p:first-child {
+          &:before {
+            width: 18px;
+            height: 23px;
+            background: url('../img/rocket_logo.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+        &.active {
+          p:first-child {
+            &:before {
+              background: url('../img/rocket_logo_active.svg') no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+    p {
+      font-size: 20px;
+      font-family: $roboto;
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+    .small {
+      font-size: 14px;
+    }
+  }
+  .tabs__content {
+    flex-basis: 80%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.2);
+    padding: 20px 15px 47px;
+    position: relative;
+    @include sm {
+      padding: 20px 24px 47px;
+    }
+    @include sm {
+      &:after,
+      &:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-right-color: $white;
+        border-width: 21px;
+        margin-top: -21px;
+      }
+      &:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-right-color: rgba(51, 51, 51, 0.08);
+        border-width: 23px;
+        margin-top: -23px;
+      }
+    }
+  }
+  .tab {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: none;
+    &.active {
+      display: flex;
+    }
+    @include lg {
+      justify-content: space-between;
+    }
+    .column {
+      width: 100%;
+      @include lg {
+        width: 48%;
+      }
+    }
+    p {
+      color: $dustyGray;
+      margin-top: 0;
+      font-size: 14px;
+      font-family: $roboto;
+      margin-bottom: 10px;
+    }
+    .card {
+      p {
+        margin-bottom: 4px;
+      }
+      label {
+        display: block;
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .paymentMethod {
+    max-width: 340px;
+  }
+  .cardDetails {
+    max-width: 370px;
+  }
+  .paymentMethod_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .radio-wrap {
+    flex-basis: 100%;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.2);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    min-height: 50px;
+    position: relative;
+    input {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    &.square {
+      flex-basis: 24%;
+      min-height: 80px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 48px;
+      width: 48px;
+      left: 50%;
+      top: 50%;
+      background-size: contain;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      filter: grayscale(100%);
+      transition: $default-transition;
+    }
+    &.active {
+      &:after {
+        filter: grayscale(0%);
+      }
+    }
+    &.americanExpress {
+      &:after {
+        height: 48px;
+        width: 48px;
+        background: url('../img/payments/americanExpress.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    &.masterCard {
+      &:after {
+        height: 39px;
+        width: 48px;
+        background: url('../img/payments/mastercard.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    &.visa {
+      &:after {
+        height: 16px;
+        width: 48px;
+        background: url('../img/payments/visa.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    &.discover {
+      &:after {
+        height: 31px;
+        width: 48px;
+        background: url('../img/payments/discover.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    &.payPal {
+      &:after {
+        height: 24px;
+        width: 97px;
+        background: url('../img/payments/paypal.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    &.amazonPay {
+      &:after {
+        height: 20px;
+        width: 100px;
+        background: url('../img/payments/amazonPay.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+
+  }
+  .card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.2);
+    padding: 20px 25px 35px;
+  }
+  .card__number-wrap {
+    display: flex;
+    margin-bottom: 25px;
+    > * {
+      width: 24%;
+    }
+    > *:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card__expiration-date {
+    width: 160px;
+    margin-right: 3%;
+  }
+  .card__cvv {
+    width: 74px;
+  }
+}

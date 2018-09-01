@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+        <div class="title_ps">pixetic <span class="grey">design agency</span></div>
+        <h1>Fill in the form</h1>
+        <form action="post">
+            <div class="form_general-info">
+                <div class="column">
+                    <div class="form-item form-name">
+                        <label for="name">Name</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form-item form-surname">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname">
+                    </div>
+                    <div class="form-item form-companyName">
+                        <label for="companyName">Company name</label>
+                        <input type="text" id="companyName">
+                    </div>
+                    <div class="form-item form-email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-item form-phone">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="form-item form-country">
+                        <label for="country">Country</label>
+                        <select id="country"> <!--Supplement an id here instead of using 'name'-->
+                            <option value="ukraine">Ukraine</option>
+                            <option value="usa" selected>USA</option>
+                            <option value="united_kingdom">United Kingdom</option>
+                        </select>
+                    </div>
+                    <div class="form-item form-city">
+                        <label for="city">City</label>
+                        <input type="text" id="city">
+                    </div>
+                    <div class="form-item form-postalCode">
+                        <label for="postalCode">Postal code</label>
+                        <input type="number" id="postalCode">
+                    </div>
+                    <div class="form-item form-address">
+                        <label for="address">Address</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="form-item form-terms">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I accept Terms and Service</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form_shipping-billing">
+                <h2>Shipping & billing details</h2>
+                <p>You can change the shipping method</p>
+                <div class="wraper">
+                    <div class="tabs_headers">
+                        <div id="tabStandard" class="tab_title">
+                            <p>Standard</p>
+                            <p class="small">5$ in 10 days</p>
+                        </div>
+                        <div id="tabExpress" class="tab_title">
+                            <p>Express</p>
+                            <p class="small">25$ in 5 days</p>
+                        </div>
+                        <div id="tabPremium" class="tab_title">
+                            <p>Premium</p>
+                            <p class="small">50$ for tomorrow</p>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="tab tabStandard">
+                            <div class="column paymentMethod">
+                                <p>Payment method first</p>
+                                <div class="paymentMethod_wrap">
+                                    <div class="radio-wrap square americanExpress">
+                                        <input type="radio" name="paymentMethodFirst" value="americanExpress">
+                                    </div>
+                                    <div class="radio-wrap square masterCard">
+                                        <input type="radio" name="paymentMethodFirst" value="masterCard">
+                                    </div>
+                                    <div class="radio-wrap square visa">
+                                        <input type="radio" name="paymentMethodFirst" value="visa">
+                                    </div>
+                                    <div class="radio-wrap square discover">
+                                        <input type="radio" name="paymentMethodFirst" value="discover">
+                                    </div>
+                                    <div class="radio-wrap payPal">
+                                        <input type="radio" name="paymentMethodFirst" value="payPal">
+                                    </div>
+                                    <div class="radio-wrap amazonPay">
+                                        <input type="radio" name="paymentMethodFirst" value="amazonPay">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column cardDetails">
+                                <p>Card details</p>
+                                <div class="card">
+                                    <div class="card__number">
+                                        <p>Card number</p>
+                                        <div class="card__number-wrap">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="card__expiration-date">
+                                            <label for="expirationDate">Expiration date</label>
+                                            <input type="text" id="expirationDate">
+                                        </div>
+                                        <div class="card__cvv">
+                                            <label for="cvv">CVC/CVV</label>
+                                            <input type="text" maxlength="3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab tabExpress">
+                            <div class="column paymentMethod ">
+                                <p>Payment method</p>
+                                <div class="paymentMethod_wrap">
+                                    <div class="radio-wrap square americanExpress">
+                                        <input type="radio" name="paymentMethod" value="americanExpress">
+                                    </div>
+                                    <div class="radio-wrap square masterCard">
+                                        <input type="radio" name="paymentMethod" value="masterCard">
+                                    </div>
+                                    <div class="radio-wrap square visa">
+                                        <input type="radio" name="paymentMethod" value="visa">
+                                    </div>
+                                    <div class="radio-wrap square discover">
+                                        <input type="radio" name="paymentMethod" value="discover">
+                                    </div>
+                                    <div class="radio-wrap payPal">
+                                        <input type="radio" name="paymentMethod" value="payPal">
+                                    </div>
+                                    <div class="radio-wrap amazonPay">
+                                        <input type="radio" name="paymentMethod" value="amazonPay">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column cardDetails">
+                                <p>Card details</p>
+                                <div class="card">
+                                    <div class="card__number">
+                                        <p>Card number</p>
+                                        <div class="card__number-wrap">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="card__expiration-date">
+                                            <label for="expirationDate">Expiration date</label>
+                                            <input type="text" id="expirationDate">
+                                        </div>
+                                        <div class="card__cvv">
+                                            <label for="cvv">CVC/CVV</label>
+                                            <input type="text" maxlength="3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab tabPremium">
+                            <div class="column paymentMethod">
+                                <p>Payment method last</p>
+                                <div class="paymentMethod_wrap">
+                                    <div class="radio-wrap square americanExpress">
+                                        <input type="radio" name="paymentMethodLast" value="americanExpress">
+                                    </div>
+                                    <div class="radio-wrap square masterCard">
+                                        <input type="radio" name="paymentMethodLast" value="masterCard">
+                                    </div>
+                                    <div class="radio-wrap square visa">
+                                        <input type="radio" name="paymentMethodLast" value="visa">
+                                    </div>
+                                    <div class="radio-wrap square discover">
+                                        <input type="radio" name="paymentMethodLast" value="discover">
+                                    </div>
+                                    <div class="radio-wrap payPal">
+                                        <input type="radio" name="paymentMethodLast" value="payPal">
+                                    </div>
+                                    <div class="radio-wrap amazonPay">
+                                        <input type="radio" name="paymentMethodLast" value="amazonPay">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column cardDetails">
+                                <p>Card details</p>
+                                <div class="card">
+                                    <div class="card__number">
+                                        <p>Card number</p>
+                                        <div class="card__number-wrap">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                            <input type="text" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <div class="card__expiration-date">
+                                            <label for="expirationDate">Expiration date</label>
+                                            <input type="text" id="expirationDate">
+                                        </div>
+                                        <div class="card__cvv">
+                                            <label for="cvv">CVC/CVV</label>
+                                            <input type="text" maxlength="3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script type="text/javascript" src="js/bundle.js"></script>
+</body>
+</html>
